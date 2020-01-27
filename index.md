@@ -9,3 +9,6 @@ You can find api descriptions for each of the following functionalities
 
 ### [LOGIN](login.md)
 > Login an existing user
+
+### [ORGANIZATIONS](organization.md)
+> Creating, fetching and updating an organization

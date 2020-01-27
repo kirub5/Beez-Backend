@@ -1,7 +1,7 @@
 ## Sign-up
 
 * Is used to register a new user to beez buro.
-* Endpoint:- _POST_ **/users**
+* Endpoint:- `POST` **/users**
 
 #### Request:-
 
