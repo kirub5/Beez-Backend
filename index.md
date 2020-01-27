@@ -12,3 +12,6 @@ You can find api descriptions for each of the following functionalities
 
 ### [ORGANIZATIONS](organization.md)
 > Creating, fetching and updating an organization
+
+### [ACCOUNTS](account.md)
+> Creating, fetching and updating an account

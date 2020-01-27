@@ -5,7 +5,7 @@
 * ENDPOINT:- `POST` **/organizations**
 
 #### Request:-
-[x] Authorization required on header
+- [x] Authorization required on header
 ```
 {
 	"name": "Company One",  // Name of the new organization
@@ -42,10 +42,10 @@
 > _To fetch a sepecific organization_
 
 #### Request:-
-[x] Authorization required on header
+- [x] Authorization required on header
 ```
 {
-
+    // empty request body
 }
 ```
 #### Response:-
@@ -88,7 +88,7 @@
 * ENDPOINT:- `PATCH` **/organizations/idOfOrganization**
 
 #### Request:-
-[x] Authorization required on header
+- [x] Authorization required on header
 ```
 {
 	"name": "Company One",
