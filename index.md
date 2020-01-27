@@ -1,37 +1,39 @@
-## Welcome to GitHub Pages
+# Backend API Documentation
 
-You can use the [editor on GitHub](https://github.com/kirub5/BeezBackend/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+This page is used to describe api's on our backend.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Sign-up
 
-### Markdown
+* Is used to register a new user to beez buro.
+* Endpoint:- **/users**
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+#### Request:-
 ```
+{
+    "email": "user1@beez.com", _email of the new user_
+	"password": "12345", _password of the new user_
+	"code": "COMP5050"        // _**(optional)** it is used if a user accepts invitation from an email_
+}
+```
+#### Response:-
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+* The user object plus an access token is sent as a response
 
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/kirub5/BeezBackend/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+```
+{
+    "activeConversationsIds": [],
+    "cardsIds": [],
+    "language": "en",
+    "rolesIds": [],
+    "organizations": [],
+    "accounts": [],
+    "accountModules": [],
+    "_id": "5e2e9f93c94f9d002f05a9a4",
+    "email": "user1@beez.com",
+    "isVerified": false,
+    "createdAt": "2020-01-27T08:30:11.527Z",
+    "updatedAt": "2020-01-27T08:30:11.527Z",
+    "__v": 0,
+    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6ImFjY2VzcyJ9.eyJ1c2VySWQiOiI1ZTJlOWY5M2M5NGY5ZDAwMmYwNWE5YTQiLCJpYXQiOjE1ODAxMTM4MTEsImV4cCI6MTU4MDIwMDIxMSwiYXVkIjoiaHR0cHM6Ly95b3VyZG9tYWluLmNvbSIsImlzcyI6ImZlYXRoZXJzIiwic3ViIjoiNWUyZTlmODljOTRmOWQwMDJmMDVhOWEzIiwianRpIjoiMTYzMDBmMjYtMDRjNi00MjQyLWFmMmEtMzZmZjAwYmYyYmNhIn0.Y8fE1pIzflLD6BXR9SCtddX_a939gr9eveqv-c4jTHo"
+}
+```
