@@ -18,3 +18,6 @@ You can find api descriptions for each of the following functionalities
 
 ### [SWITCHING](switch.md)
 > Switching between multiple organizations, accounts or modules
+
+### [MANAGE USERS](manageusers.md)
+> Fetching owners and changing roles of users
