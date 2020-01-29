@@ -7,6 +7,9 @@ You can find api descriptions for each of the following functionalities
 ### [SIGNUP](signup.md)
 > Register a new user
 
+### [VERIFY EMAIL](verify.md)
+> Verify the email of a new user
+
 ### [LOGIN](login.md)
 > Login an existing user
 
