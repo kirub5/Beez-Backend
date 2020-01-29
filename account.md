@@ -100,6 +100,7 @@
 ```
 {
 	"name": "Account_One",
+    "description": "Some description"
 }
 ```
 #### Response:-
@@ -115,6 +116,7 @@
     "domain": ["beez.com"],
     "pendingAccountOwners": ["user3@beez.com"],
     "name": "Account_One",
+    "description": "Some description",
     "orgId": "5e2eb10fc94f9d002f05a9a5",
     "createdAt": "2020-01-27T11:37:27.756Z",
     "updatedAt": "2020-01-27T11:52:51.181Z",

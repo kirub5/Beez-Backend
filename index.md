@@ -13,6 +13,9 @@ You can find api descriptions for each of the following functionalities
 ### [LOGIN](login.md)
 > Login an existing user
 
+### [FORGET PASSWORD](forget.md)
+> Reset a forgotten password
+
 ### [ORGANIZATIONS](organization.md)
 > Creating, fetching and updating an organization
 
