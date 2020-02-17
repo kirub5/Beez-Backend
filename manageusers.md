@@ -2,131 +2,66 @@
 
 * Is used to fetch owners of organizations, accounts or modules
 * Only **OWNERS** can fetch owners
-* There are 3 levels:- 
-    1. **ORGANIZATION** :- will return organization owners for the organization the user beezed in
-    2. **ACCOUNT** :- will return account owners for the account the user beezed in
-    3. **MODULE** :- will return module owners for the accountModule the user beezed in
+* There are 2 levels:- 
+    1. **ACCOUNT** :- will return account owners for the account the user beezed in
+    2. **MODULE** :- will return module owners for the accountModule the user beezed in
 * ENDPOINT:- `POST` **/fetch-users**
+* If the level is set to **ACCOUNT**, accountid should be attached to the request header
+* * If the level is set to **MODULE**, accountid and accountmoduleid should be attached to the request header
 
 #### Request:-
 - [x] Authorization required on header
+- [x] accountid required
+- [x] accountmoduleid required if the level is **MODULE**
 ```
 {
-	"level": "ACCOUNT"  // can be ORGANIZATION, ACCOUNT or MODULE, which will return owners of the specified level 
+	"level": "ACCOUNT"  // can be ACCOUNT or MODULE, which will return users of the specified level 
 }
 ```
 #### Response:-
 
 * List of user objects will be returned
 * Pending owners will be returned (Name and email)
+* Current Account Role or Current Module Role are fields that show what role the user has in the fetched account or module
+
+
 ```
 {
-    "total": 3,
+    "total": 1,
     "limit": 30,
     "skip": 0,
     "data": [
         {
-            "_id": "5e2eb9d80c6d4c004124880e",
+            "_id": "5e4aac70f52617001dda4f48",
             "activeConversationsIds": [],
             "cardsIds": [],
             "language": "en",
             "rolesIds": [
-                "5e2ebc230c6d4c004124880f"
-            ],
-            "organizations": [
-                "5e2eb10fc94f9d002f05a9a5"
+                "5e4aac95f52617001dda4f49"
             ],
             "accounts": [
-                "5e2ecb776c8f6f01c905c16b",
-                "5e2ed53d6c8f6f01c905c16d"
+                "5e4aa8f3f52617001dda4f46"
             ],
             "accountModules": [],
             "email": "user1@beez.com",
             "isVerified": false,
-            "verifyExpires": "2020-02-01T10:22:16.396Z",
-            "verifyToken": "78863aa07937047d0a596a9d010b28",
-            "verifyShortToken": "305462",
-            "createdAt": "2020-01-27T10:22:16.418Z",
-            "updatedAt": "2020-01-27T12:20:21.322Z",
+            "verifyExpires": "2020-02-22T15:08:32.284Z",
+            "verifyToken": "e6bc905cb2a33d8982a991c7382aae",
+            "verifyShortToken": "211926",
+            "createdAt": "2020-02-17T15:08:32.286Z",
+            "updatedAt": "2020-02-17T15:09:09.713Z",
             "__v": 0,
-            "beezInToOrganization": "5e2eb10fc94f9d002f05a9a5",
-            "beezInToAccount": "5e2ecb776c8f6f01c905c16b",
-            "beezInToModule": null,
-            "currentOrganizationRole": {
-                "_id": "5e2ebc230c6d4c004124880f",
-                "organizationRole": "ORG_OWNER",
-                "customOrganizationRoles": []
-            },
             "currentAccountRole": {
+                "_id": "5e4aac95f52617001dda4f49",
                 "accountRole": "ACCOUNT_OWNER",
                 "customAccountRoles": [],
-                "_id": "5e2ecb786c8f6f01c905c16c",
-                "accountId": "5e2ecb776c8f6f01c905c16b"
-            }
-        },
-        {
-            "_id": "5e2fdab2ebc64a01051c1176",
-            "activeConversationsIds": [],
-            "cardsIds": [],
-            "language": "en",
-            "rolesIds": [
-                "5e2fdab2ebc64a01051c1177"
-            ],
-            "organizations": [
-                "5e2eb10fc94f9d002f05a9a5"
-            ],
-            "accounts": [],
-            "accountModules": [],
-            "email": "user3@beez.com",
-            "isVerified": false,
-            "verifyExpires": "2020-02-02T06:54:42.080Z",
-            "verifyToken": "425b5d64c10593583de9685d18fe97",
-            "verifyShortToken": "243697",
-            "createdAt": "2020-01-28T06:54:42.084Z",
-            "updatedAt": "2020-01-28T06:54:42.105Z",
-            "__v": 0,
-            "beezInToOrganization": "5e2eb10fc94f9d002f05a9a5",
-            "currentOrganizationRole": {
-                "_id": "5e2fdab2ebc64a01051c1177",
-                "organizationRole": "ORG_OWNER",
-                "customOrganizationRoles": []
-            }
-        },
-        {
-            "_id": "5e2fdc1fe822dd0113ddf42d",
-            "activeConversationsIds": [],
-            "cardsIds": [],
-            "language": "en",
-            "rolesIds": [
-                "5e2fdc1fe822dd0113ddf42e"
-            ],
-            "organizations": [
-                "5e2eb10fc94f9d002f05a9a5"
-            ],
-            "accounts": [
-                "5e2ecb776c8f6f01c905c16b"
-            ],
-            "accountModules": [],
-            "email": "user4@beez.com",
-            "isVerified": false,
-            "verifyExpires": "2020-02-02T07:00:47.206Z",
-            "verifyToken": "fab2a9a6b18fb4e392c16676848256",
-            "verifyShortToken": "110737",
-            "createdAt": "2020-01-28T07:00:47.226Z",
-            "updatedAt": "2020-01-28T07:00:47.302Z",
-            "__v": 0,
-            "beezInToAccount": "5e2ecb776c8f6f01c905c16b",
-            "beezInToOrganization": "5e2eb10fc94f9d002f05a9a5",
-            "currentOrganizationRole": {
-                "_id": "5e2fdc1fe822dd0113ddf42e",
-                "organizationRole": "ORG_MEMBER",
-                "customOrganizationRoles": []
-            },
-            "currentAccountRole": {
-                "accountRole": "ACCOUNT_OWNER",
-                "customAccountRoles": [],
-                "_id": "5e2fdc1fe822dd0113ddf42f",
-                "accountId": "5e2ecb776c8f6f01c905c16b"
+                "accountPermissions": [],
+                "userId": "5e4aac70f52617001dda4f48",
+                "accountId": "5e4aa8f3f52617001dda4f46",
+                "moduleRoles": [],
+                "createdAt": "2020-02-17T15:09:09.709Z",
+                "updatedAt": "2020-02-17T15:09:09.709Z",
+                "__v": 0
             }
         }
     ],
@@ -146,16 +81,19 @@
 
 * Is used to change role of a user
 * Only **OWNERS** can change other user's roles
-* Organization roles are :- **ORG_OWNER**, **ORG_MEMBER**
 * Account roles are :- **ACCOUNT_OWNER**, **ACCOUNT_MEMBER**
-* Module roles are :- **MODULE_OWNER**, **MODULE_MEMBER**, **SELECTOR**, **APPLICANT**
+* Module roles are :- **MODULE_MEMBER**, **SELECTOR**, **APPLICANT**
 * ENDPOINT:- `POST` **/update-role**
 
 #### Request:-
 - [x] Authorization required on header
+- [x] accountid should be on the header
+- [x] accountmoduleid should be on the header if the level is 'Module'
+
+
 ```
 {
-	"level": "Account", // Can be ORGANIZATION, ACCOUNT or MODULE
+	"level": "Account", // Can be ACCOUNT or MODULE
 	"userId": "5e2fdc1fe822dd0113ddf42d",   // id of the victom user
 	"newRole": "ACCOUNT_MEMBER" // The new Role
 }
